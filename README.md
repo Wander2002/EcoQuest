@@ -1,120 +1,114 @@
-🌎 EcoQuest — O RPG da Sustentabilidade
+# 🌍 EcoQuest — RPG da Sustentabilidade
 
-💡 Conceito
-Um jogo em formato de RPG onde o jogador assume o papel de um Guardião do Planeta. A missão é enfrentar vilões ambientais (como poluição, desmatamento, desperdício) através de ações sustentáveis na vida real, que se transformam em XP, evolução e melhorias no mundo virtual.
+O **EcoQuest** é um jogo no estilo RPG que conecta ações sustentáveis do mundo real com progressão e recompensas no mundo virtual. O jogador assume o papel de um **Guardião do Planeta**, enfrentando vilões ambientais através de ações ecológicas, como reciclagem, economia de água, plantio de árvores e combate ao desperdício.
 
-🔥 Inovação
-Suas ações no mundo real geram impacto no jogo.
+---
 
-Sistema de mapa colaborativo, onde jogadores podem relatar ações sustentáveis, pontos de coleta, feiras, locais de descarte, etc.
+## 🚀 Objetivo
 
-Combate contra "Monstros Ambientais", como:
+Incentivar ações sustentáveis na vida real por meio de um RPG, onde os jogadores evoluem seus personagens e combatem vilões ambientais através de missões ecológicas.
 
-PlastiGo (vilão do plástico)
+---
 
-Desmator (desmatamento)
+## 🎮 Funcionalidades Principais
 
-Aguazila (desperdício de água)
+- ✅ Criação de personagem estilo Guardião do Planeta.
+- ✅ Sistema de quests diárias e semanais com desafios sustentáveis.
+- ✅ Combate simbólico contra vilões ambientais (poluição, desperdício, desmatamento, etc.).
+- ✅ Evolução de atributos baseados em ações reais.
+- ✅ Mapa colaborativo com pontos de coleta, feiras ecológicas e eventos verdes.
+- ✅ Sistema de ranking e conquistas.
+- ✅ Loja de itens para personalização sustentável do avatar.
 
-EletroTrash (lixo eletrônico)
+---
 
-Personagem evolui se você recicla, economiza água, planta árvores ou participa de eventos ecológicos.
+## 📜 Requisitos
 
-🏹 Como Funciona
-📜 Quests diárias/semanal
+### ✅ Requisitos Funcionais (RF)
 
-Desafio: Separar lixo reciclável → 🎁 +XP +Moedas verdes
+- RF001 — Cadastro e autenticação de usuários.
+- RF002 — Criação e personalização do personagem.
+- RF003 — Listagem e execução de quests sustentáveis.
+- RF004 — Sistema de evolução de níveis e atributos.
+- RF005 — Sistema de combate contra vilões ambientais.
+- RF006 — Visualização de mapa colaborativo de pontos sustentáveis.
+- RF007 — Loja de itens e personalização.
+- RF008 — Ranking e conquistas por impacto sustentável.
 
-Economizar água no banho → 🎁 +XP +Poderes
+### ⚙️ Requisitos Não Funcionais (RNF)
 
-Levar óleo usado no ponto de coleta → 🎁 +Item raro
+- RNF001 — Interface responsiva (web e mobile).
+- RNF002 — Banco de dados escalável.
+- RNF003 — Tempo de resposta inferior a 3 segundos.
+- RNF004 — Segurança dos dados dos usuários.
+- RNF005 — Design intuitivo e acessível.
+- RNF006 — Suporte multiplataforma com Flutter.
 
-Plantar uma árvore (com foto) → 🎁 Evolução do personagem + Equipamento lendário
+---
 
-🎯 Sistema de Combate
+## 🛠️ Tecnologias
 
-Luta simbólica contra vilões ambientais.
+- **Linguagem:** Dart
+- **Framework:** Flutter (Web, Mobile e Desktop)
+- **Backend & Banco de Dados:** Firebase (Firestore, Authentication, Storage)
+- **APIs:** Google Maps API (mapa colaborativo)
+- **Gerenciamento de Estado:** Provider ou Riverpod
+- **Outros:** Git, GitHub, Firebase Hosting
 
-Sua força depende das ações que você fez na vida real.
+---
 
-Exemplo: Se você economizou energia, ganha bônus de defesa contra EletroTrash.
+## 🧠 Metodologia
 
-🌍 Mapa Global
+- 🎯 **Metodologia:** Kanban
+- 📋 **Ferramenta:** Trello
+- 🔁 Entregas incrementais com sprints semanais
+- ✅ Desenvolvimento Orientado a Testes (TDD)
 
-Jogadores podem colaborar marcando pontos de coleta, eventos ecológicos, oficinas de compostagem, feiras sustentáveis, etc.
+---
 
-🛒 Loja Ecológica Virtual
+## 🗺️ Estrutura do Projeto
+lib/
+├── models/
+├── providers/
+├── screens/
+├── services/
+├── widgets/
+└── main.dart
 
-Personalize seu personagem com roupas feitas de "materiais reciclados".
+## 📈 Roadmap
 
-Ganhe "sementes" para cultivar árvores no mundo do jogo.
+- [x] Definição do conceito e escopo
+- [x] Documentação inicial
+- [ ] Protótipo das telas
+- [ ] Desenvolvimento do MVP
+- [ ] Implementação de ranking e conquistas
+- [ ] Integração de mapa colaborativo
+- [ ] Publicação na Web e Play Store
 
-🏆 Atributos do Personagem
-🌱 Eco-Consciência: Quanto você entende e aplica práticas sustentáveis.
+---
 
-💧 Cuidado com Recursos: Relacionado a economia de água e energia.
+## 💡 Trabalhos Futuros
 
-🌿 Impacto Verde: Ações de plantio, reciclagem, preservação.
+- 🎯 Implementar desafios colaborativos entre usuários
+- 🌐 Suporte a múltiplos idiomas
+- 🏆 Eventos sazonais temáticos (Dia da Terra, Semana do Meio Ambiente, etc.)
+- 📱 Integração com redes sociais para divulgação de impacto
 
-🔥 Influência Sustentável: Compartilhamento, engajamento e liderança na comunidade.
+---
 
-📲 Funcionalidades
-Login / Cadastro
+## 🤝 Contribuindo
 
-Criação de Avatar Ecológico
+Contribuições são bem-vindas! Sinta-se à vontade para abrir *issues*, enviar *pull requests* ou sugerir melhorias.
 
-Missões diárias e desafios especiais
+---
 
-Combate simbólico contra vilões ambientais
+## 🧑‍💻 Desenvolvido por
 
-Sistema de pontos, níveis e conquistas
+- **Wander Jean Hanemann**  
+Email: [wander.hanemann@catolicasc.edu.br](mailto:wander.hanemann@catolicasc.edu.br)  
+Instituição: Católica de Santa Catarina  
+Curso: Engenharia de Software
 
-Mapa colaborativo de ações sustentáveis
+---
 
-Relatórios de impacto pessoal e coletivo
-
-Ranking de Guardiões do Planeta
-
-Eventos sazonais (ex.: Semana do Meio Ambiente, Dia da Água)
-
-🌐 Tecnologias Aplicáveis
-Flutter Web, Mobile e Desktop
-
-Firebase (Auth, Firestore, Realtime Database)
-
-Integração com:
-
-Google Maps API (para mapa colaborativo)
-
-APIs de ONGs ou entidades ambientais para dados de eventos
-
-Machine Learning (futuramente) para reconhecimento de imagem → Validar, por exemplo, uma foto de reciclagem ou plantio.
-
-🚀 Impacto Social Real
-Gera conscientização ambiental.
-
-Estimula hábitos sustentáveis nas pessoas.
-
-Pode se tornar uma rede de impacto verde.
-
-Parcerias possíveis com ONGs, prefeituras, empresas de reciclagem, startups de sustentabilidade.
-
-💸 Modelo de Negócio Possível
-Freemium: App gratuito com loja de skins ecológicas e recursos extras.
-
-Parcerias: Com ONGs, prefeituras e empresas para patrocinar eventos ou missões.
-
-Marketplace Verde: Empresas podem divulgar produtos sustentáveis no app.
-
-🤯 Diferencial Inovador
-🌍 🕹️ "Jogue salvando o planeta, e salve o planeta jogando."
-
-Se quiser, eu posso gerar para você:
-
-✅ Documento completo de requisitos (RF, RNF)
-
-✅ Diagrama de classes e de atividades
-
-✅ Protótipo de telas (Wireframe)
-
-✅ Estrutura inicial do código em Flutter
+## 🌍 Jogue salvando o planeta. Salve o planeta jogando. ♻️
