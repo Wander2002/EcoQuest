@@ -23,38 +23,6 @@ Incentivar ações sustentáveis na vida real por meio de um RPG, onde os jogado
 
 ---
 
-## 🖥️ Tela de Login e Cadastro
-
-### 📲 **Descrição**
-A tela de **Login e Cadastro** permite que os usuários acessem o jogo de forma segura, utilizando email e senha. Após o login ou cadastro, o usuário é direcionado à criação do personagem e, em seguida, ao ambiente de jogo.
-
-### 🔑 **Funcionalidades**
-- ✅ Cadastro de novos usuários com email e senha.
-- ✅ Login de usuários existentes.
-- 🔒 Recuperação de senha via email.
-- 🔐 Autenticação segura integrada com Firebase Authentication.
-
-### 🧩 **Componentes**
-- Campo de email
-- Campo de senha
-- Botão **"Entrar"**
-- Link **"Não tem uma conta? Cadastre-se"**
-- Tela de cadastro:
-  - Campo de nome
-  - Campo de email
-  - Campo de senha
-  - Campo de confirmação de senha
-  - Botão **"Cadastrar"**
-- Link **"Esqueceu sua senha?"** para recuperação.
-
-### 🔄 **Fluxo**
-1. O usuário acessa a tela inicial e escolhe **"Entrar"** ou **"Cadastrar"**.
-2. Após o cadastro, é redirecionado para criar seu personagem.
-3. Após login, o usuário acessa a tela inicial do jogo com quests, mapa e progresso.
-4. Caso esqueça a senha, pode solicitar redefinição via email.
-
----
-
 ## 📜 Requisitos
 
 ### ✅ Requisitos Funcionais (RF)
