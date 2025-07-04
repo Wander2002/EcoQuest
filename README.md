@@ -70,21 +70,23 @@ Incentivar ações sustentáveis na vida real por meio de um RPG, onde os jogado
 ## 🗺️ Estrutura do Projeto
 
 ```plaintext
-lib/
-├── models/              # Definição dos modelos e estruturas de dados
-├── providers/           # Gerenciamento de estado e lógica de negócios
-├── screens/             # Telas principais da aplicação
-│   ├── login_screen.dart      # Tela de login
-│   ├── register_screen.dart   # Tela de cadastro
-│   ├── home_screen.dart       # Tela inicial / dashboard
-│   ├── profile_screen.dart    # Tela de perfil do usuário
-│   ├── quest_screen.dart      # Tela de missões / desafios
-│   ├── combat_screen.dart     # Tela de combate
-│   └── map_screen.dart        # Tela de mapa interativo
-├── services/            # Serviços externos e autenticação
-│   └── auth_service.dart      # Serviço de autenticação
-├── widgets/             # Componentes reutilizáveis da interface
-└── main.dart            # Arquivo principal de inicialização da aplicação
+ecoquest/
+├── public/
+├── src/
+│   ├── assets/          # Ativos estáticos como imagens
+│   ├── components/      # Componentes React reutilizáveis
+│   │   └── ui/          # Componentes shadcn/ui
+│   ├── hooks/           # Hooks React personalizados
+│   ├── lib/             # Funções utilitárias e configurações
+│   ├── services/        # Serviços de API e lógica de negócio
+│   ├── App.jsx          # Componente principal do jogo
+│   ├── App.css          # Estilos customizados
+│   ├── firebase.js      # Configuração do Firebase
+│   ├── firebaseConfig.js # Configuração específica do Firebase
+│   ├── index.css        # Estilos globais
+│   └── main.jsx         # Ponto de entrada da aplicação
+├── package.json
+└── vite.config.js
 ```
 ---
 
