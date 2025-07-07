@@ -1,6 +1,6 @@
 # 🌍 EcoQuest — RPG da Sustentabilidade
 
-O **EcoQuest** é um jogo no estilo RPG que conecta ações sustentáveis do mundo real com progressão e recompensas no mundo virtual. O jogador assume o papel de um **Guardião do Planeta**, enfrentando vilões ambientais através de ações ecológicas, como reciclagem, economia de água, plantio de árvores e combate ao desperdício.
+O **EcoQuest** é um jogo no estilo RPG que conecta ações sustentáveis do mundo real com progressão e recompensas no mundo virtual. O jogador assume o papel de um **Guardião do Planeta**, concluindo missões diárias e combatendo vilões ambientais através de ações ecológicas.
 
 ---
 
@@ -14,12 +14,11 @@ Incentivar ações sustentáveis na vida real por meio de um RPG, onde os jogado
 
 - ✅ Tela de login e cadastro de usuário.
 - ✅ Criação de personagem estilo Guardião do Planeta.
-- ✅ Sistema de quests diárias e semanais com desafios sustentáveis.
-- ✅ Combate simbólico contra vilões ambientais (poluição, desperdício, desmatamento, etc.).
-- ✅ Evolução de atributos baseados em ações reais.
-- ✅ Mapa colaborativo com pontos de coleta, feiras ecológicas e eventos verdes.
-- ✅ Sistema de ranking e conquistas.
-- ✅ Loja de itens para personalização sustentável do avatar.
+- ✅ Sistema de quests diárias com desafios sustentáveis.
+- ✅ Combate contra vilões ambientais.
+- ✅ Evolução de atributos.
+- ✅ Sistema de combate e conquistas.
+- ✅ Sistema de Inventário com fusão de itens.
 
 ---
 
@@ -32,38 +31,36 @@ Incentivar ações sustentáveis na vida real por meio de um RPG, onde os jogado
 - RF003 — Listagem e execução de quests sustentáveis.
 - RF004 — Sistema de evolução de níveis e atributos.
 - RF005 — Sistema de combate contra vilões ambientais.
-- RF006 — Visualização de mapa colaborativo de pontos sustentáveis.
+- RF006 — Visualização de mapa colaborativo de pontos sustentáveis (Funcionalidade futura).
 - RF007 — Loja de itens e personalização.
 - RF008 — Ranking e conquistas por impacto sustentável.
+- RF009 — Sistema de Inventário com gerenciamento de itens e fusão.
 
 ### ⚙️ Requisitos Não Funcionais (RNF)
 
-- RNF001 — Interface responsiva (web e mobile).
+- RNF001 — Interface responsiva (web).
 - RNF002 — Banco de dados escalável.
 - RNF003 — Tempo de resposta inferior a 3 segundos.
-- RNF004 — Segurança dos dados dos usuários, especialmente autenticação.
+- RNF004 — Segurança dos dados dos usuários.
 - RNF005 — Design intuitivo e acessível.
-- RNF006 — Suporte multiplataforma com Flutter.
+- RNF006 — Suporte multiplataforma (Web).
 
 ---
 
 ## 🛠️ Tecnologias
 
-- **Linguagem:** Dart
-- **Framework:** Flutter (Web, Mobile e Desktop)
-- **Backend & Banco de Dados:** Firebase (Firestore, Authentication, Storage)
-- **APIs:** Google Maps API (para mapa colaborativo)
-- **Gerenciamento de Estado:** Provider ou Riverpod
-- **Outros:** Git, GitHub, Firebase Hosting
+- **Linguagem:** JavaScript
+- **Framework/Biblioteca:** React
+- **Backend & Banco de Dados:** Firebase
+- **Estilização:** CSS
 
 ---
 
 ## 🧠 Metodologia
 
 - 🎯 **Metodologia:** Kanban
-- 📋 **Ferramenta:** Trello
+- 📋 **Ferramenta:** Trello (Exemplo)
 - 🔁 Entregas incrementais com sprints semanais
-- ✅ Desenvolvimento Orientado a Testes (TDD)
 
 ---
 
@@ -71,38 +68,39 @@ Incentivar ações sustentáveis na vida real por meio de um RPG, onde os jogado
 
 ```plaintext
 ecoquest/
-├── public/
-├── src/
-│   ├── assets/          # Ativos estáticos como imagens
-│   ├── components/      # Componentes React reutilizáveis
-│   │   └── ui/          # Componentes shadcn/ui
-│   ├── hooks/           # Hooks React personalizados
-│   ├── lib/             # Funções utilitárias e configurações
-│   ├── services/        # Serviços de API e lógica de negócio
-│   ├── App.jsx          # Componente principal do jogo
-│   ├── App.css          # Estilos customizados
-│   ├── firebase.js      # Configuração do Firebase
-│   ├── firebaseConfig.js # Configuração específica do Firebase
-│   ├── index.css        # Estilos globais
-│   └── main.jsx         # Ponto de entrada da aplicação
-├── package.json
-└── vite.config.js
+├── public/             
+├── src/                # Código-fonte da aplicação
+│   ├── assets/         # Ativos estáticos como imagens e ícones
+│   ├── components/     # Componentes React
+│   │   └── ui/         # Componentes de UI
+│   ├── hooks/          # Hooks React
+│   ├── lib/            # Funções e configurações
+│   ├── services/       # Serviços de API e lógica de negócio (Firebase)
+│   ├── App.jsx         # Componente principal da aplicação e roteamento
+│   ├── App.css         # Estilos globais e específicos do App
+│   ├── firebase.js     # Configuração e inicialização do Firebase
+│   ├── firebaseConfig.js # Chaves e configurações específicas do Firebase
+│   ├── index.css       # Estilos CSS
+│   └── main.jsx        # Ponto de entrada da aplicação React
+├── package.json        # Dependências
+├── vite.config.js      # Configuração do Vite
+├── components.json     # Configuração do shadcn/ui
+├── eslint.config.js    # Configuração do ESLint
+├── jsconfig.json       # Configuração do JavaScript
+├── index.html          # Template HTML
+├── package-lock.json   # Dependências npm
+└── pnpm-lock.yaml      # Dependências pnpm
 ```
 ---
 
 ## 💡 Trabalhos Futuros
 
-- 🗺️ Integração de mapa colaborativo
+- 🗺️ Integração de mapa colaborativo (Google Maps API)
 - 🎯 Implementar desafios colaborativos entre usuários
 - 🌐 Suporte a múltiplos idiomas
 - 🏆 Eventos sazonais temáticos (Dia da Terra, Semana do Meio Ambiente, etc.)
 - 📱 Integração com redes sociais para divulgação de impacto
-
----
-
-## 🤝 Contribuindo
-
-Contribuições são bem-vindas! Sinta-se à vontade para abrir *issues*, enviar *pull requests* ou sugerir melhorias.
+- 📊 Dashboards de progresso e impacto ambiental do jogador
 
 ---
 
