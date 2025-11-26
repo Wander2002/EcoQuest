@@ -14,7 +14,9 @@ import {
   Sword,
   Plus,
   AlertCircle,
-  Badge as BadgeIcon,
+  Trophy,
+  X,
+
 } from "lucide-react";
 import { useAuth } from "./hooks/useAuth";
 import { registerUser, loginUser, logoutUser } from "./services/authService";
@@ -38,7 +40,7 @@ import {
   deleteEvent,
   getUserInventory,
 } from "./services/firestoreService";
-import { uploadFile, deleteFileByUrl } from "./services/firebaseStorageService"; // Adicionado
+// import { uploadFile, deleteFileByUrl } from "./services/firebaseStorageService"; // Removido por não ser usado
 import "./App.css";
 
 /* Leaflet */
@@ -69,7 +71,7 @@ function App() {
   const [userActions, setUserActions] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [notification, setNotification] = useState(null);
-  const [dialogOpen, setDialogOpen] = useState(false);
+  const [dialogOpen, setDialogOpen] = useState(null);
 
   // Events state
   const [events, setEvents] = useState([]);
@@ -97,6 +99,37 @@ function App() {
     { id: 5, name: "Fedorácido", description: "Polui rios com dejetos químicos.", baseHp: 110, baseAttack: 16, baseDefense: 6, emoji: "☣️" },
     { id: 6, name: "Consumínion", description: "Incentiva compra excessiva e desperdício.", baseHp: 140, baseAttack: 14, baseDefense: 9, emoji: "👹" },
   ];
+
+  const levelBadges = [
+    { level: 1, name: "Aprendiz", icon: "🐣", description: "Bem-vindo! Iniciou a jornada de Guardião." },
+    { level: 5, name: "Semente", icon: "🌱", description: "O início da jornada. Alcançou o Nível 5." },
+    { level: 10, name: "Broto", icon: "🌿", description: "Começando a crescer. Alcançou o Nível 10." },
+    { level: 15, name: "Guardião Júnior", icon: "🛡️", description: "Primeiros passos na proteção. Alcançou o Nível 15." },
+    { level: 20, name: "Defensor Verde", icon: "💚", description: "Compromisso com a natureza. Alcançou o Nível 20." },
+    { level: 25, name: "Protetor da Água", icon: "💧", description: "Especialista em recursos hídricos. Alcançou o Nível 25." },
+    { level: 30, name: "Mestre da Reciclagem", icon: "♻️", description: "Domínio na gestão de resíduos. Alcançou o Nível 30." },
+    { level: 35, name: "Guardião da Energia", icon: "⚡", description: "Especialista em uso consciente de energia. Alcançou o Nível 35." },
+    { level: 40, name: "Herói da Biodiversidade", icon: "🦋", description: "Preservação da vida selvagem. Alcançou o Nível 40." },
+    { level: 45, name: "Embaixador Climático", icon: "🌍", description: "Consciência e ação global. Alcançou o Nível 45." },
+    { level: 50, name: "Lenda Sustentável", icon: "🌟", description: "Um modelo para a comunidade. Alcançou o Nível 50." },
+    { level: 60, name: "Mestre da Floresta", icon: "🌳", description: "Compromisso com o reflorestamento. Alcançou o Nível 60." },
+    { level: 70, name: "Guardião Supremo", icon: "👑", description: "Autoridade máxima em sustentabilidade. Alcançou o Nível 70." },
+    { level: 80, name: "Campeão do Eco", icon: "🏆", description: "O maior guardião da Terra. Alcançou o Nível 80." },
+  ];
+
+  const getCurrentBadge = (level) => {
+    if (!level) return levelBadges[0]; // Retorna a primeira insígnia (Aprendiz) se o nível for 0 ou nulo
+    
+    // Encontra a insígnia com o maior nível que o jogador já alcançou
+    const currentBadge = levelBadges.reduce((bestBadge, current) => {
+      if (level >= current.level) {
+        return current;
+      }
+      return bestBadge;
+    }, levelBadges[0]); // Começa com a insígnia de nível 1 como padrão
+
+    return currentBadge;
+  };
 
   /* Google Maps loader (Vite only) - usar import.meta.env */
   const googleApiKey = (import.meta && import.meta.env && import.meta.env.VITE_GOOGLE_MAPS_API_KEY) || "";
@@ -222,6 +255,36 @@ function App() {
   };
 
   /* Streak logic */
+
+  const checkStreak = async (userId) => {
+    try {
+      const loaded = await loadStreak(userId);
+      if (loaded && loaded.lastActionDate) {
+        const lastActionDate = loaded.lastActionDate.toMillis ? new Date(loaded.lastActionDate.toMillis()) : new Date(loaded.lastActionDate);
+        const today = new Date();
+        const yesterday = new Date();
+        yesterday.setDate(yesterday.getDate() - 1);
+
+        const normalizeDate = (date) => {
+          const d = new Date(date);
+          d.setHours(0, 0, 0, 0);
+          return d.getTime();
+        };
+
+        const lastActionDay = normalizeDate(lastActionDate);
+        const todayDay = normalizeDate(today);
+        const yesterdayDay = normalizeDate(yesterday);
+
+        if (lastActionDay < yesterdayDay) {
+          const toSave = { streak: 0, lastActionDate: loaded.lastActionDate, bestStreak: loaded.bestStreak };
+          await saveStreak(userId, toSave);
+          setStreakData(toSave);
+        }
+      }
+    } catch (err) {
+      console.error("Erro ao verificar streak:", err);
+    }
+  };
   const updateStreakForUser = async (userId) => {
     try {
       const loaded = await loadStreak(userId);
@@ -230,13 +293,30 @@ function App() {
       let bestStreak = (loaded && loaded.bestStreak) ? loaded.bestStreak : 0;
 
       if (loaded && loaded.lastActionDate) {
-        const last = loaded.lastActionDate.toMillis ? loaded.lastActionDate.toMillis() : new Date(loaded.lastActionDate).getTime();
-        const diff = now - last;
-        if (diff <= 24 * 60 * 60 * 1000) {
+        const lastActionDate = loaded.lastActionDate.toMillis ? new Date(loaded.lastActionDate.toMillis()) : new Date(loaded.lastActionDate);
+        const today = new Date(now);
+        const yesterday = new Date(now);
+        yesterday.setDate(yesterday.getDate() - 1);
+
+        // Função auxiliar para zerar a hora
+        const normalizeDate = (date) => {
+          const d = new Date(date);
+          d.setHours(0, 0, 0, 0);
+          return d.getTime();
+        };
+
+        const lastActionDay = normalizeDate(lastActionDate);
+        const todayDay = normalizeDate(today);
+        const yesterdayDay = normalizeDate(yesterday);
+
+        if (lastActionDay === todayDay) {
+          // Ação já registrada hoje, mantém o streak
           streak = loaded.streak || 1;
-        } else if (diff <= 48 * 60 * 60 * 1000) {
+        } else if (lastActionDay === yesterdayDay) {
+          // Ação registrada ontem, incrementa o streak
           streak = (loaded.streak || 0) + 1;
         } else {
+          // Ação não registrada ontem nem hoje, zera o streak
           streak = 1;
         }
       }
@@ -302,6 +382,14 @@ function App() {
             newMaxXp = Math.floor(newMaxXp * 1.5);
             newMaxHp += 20;
             newHp = newMaxHp;
+
+            // Lógica de Insígnia por Nível
+            const newBadge = levelBadges.find(badge => badge.level === newLevel);
+            if (newBadge) {
+              setTimeout(() => {
+                showNotification(`Nova Insígnia Desbloqueada: ${newBadge.name} ${newBadge.icon}`, "success");
+              }, 1500);
+            }
           }
 
           const updatedCharacter = {
@@ -409,10 +497,10 @@ function App() {
               </div>
 
               <div className="flex gap-2">
-                <Button className="w-full bg-primary hover:bg-primary/90" onClick={handleRegister} disabled={isUploading}>
+                <Button className="flex-1 bg-primary hover:bg-primary/90" onClick={handleRegister} disabled={isUploading}>
                   {isUploading ? "Enviando..." : initialAction ? "Salvar Edição" : "Registrar Ação"}
                 </Button>
-                <Button variant="outline" className="w-full" onClick={() => onClose && onClose()} disabled={isUploading}>Cancelar</Button>
+                <Button variant="outline" className="flex-1" onClick={onClose} disabled={isUploading}>Cancelar</Button>
               </div>
             </div>
           </CardContent>
@@ -684,6 +772,7 @@ function App() {
   useEffect(() => {
     if (loading) return;
     if (user) {
+      checkStreak(user.uid);
       (async () => {
         try {
           const s = await loadStreak(user.uid);
@@ -888,6 +977,14 @@ function App() {
           newMaxXp = Math.floor(newMaxXp * 1.5);
           newMaxHp += 20;
           newHp = newMaxHp;
+
+          // Lógica de Insígnia por Nível
+          const newBadge = levelBadges.find(badge => badge.level === newLevel);
+          if (newBadge) {
+            setTimeout(() => {
+              showNotification(`Nova Insígnia Desbloqueada: ${newBadge.name} ${newBadge.icon}`, "success");
+            }, 1500);
+          }
         }
 
         const updatedCharacter = { ...character, xp: newXp, level: newLevel, maxXp: newMaxXp, hp: newHp, maxHp: newMaxHp };
@@ -1128,34 +1225,48 @@ function App() {
   const AchievementsScreen = () => {
     return (
       <div className="p-4">
-        <h2 className="text-2xl font-bold mb-4">Conquistas</h2>
-        <div className="grid gap-4">
-          <Card className="p-4">
-            <div className="flex items-center justify-between">
-              <div>
-                <div className="text-sm text-gray-500">Streak atual</div>
-                <div className="text-2xl font-bold">🔥 {streakData.streak || 0}</div>
-              </div>
-              <div>
-                <div className="text-sm text-gray-500">Melhor streak</div>
-                <div className="text-2xl font-bold">{streakData.bestStreak || 0}</div>
-              </div>
+        <h2 className="text-3xl font-extrabold mb-6 text-green-700 border-b-4 border-green-300 pb-2">
+          Insígnias de Guardião
+        </h2>
+
+        <Card className="shadow-2xl border-2 border-green-400">
+          <CardHeader className="text-center">
+            <CardTitle className="text-2xl text-green-800">Progresso de Nível</CardTitle>
+            <CardDescription>
+              Desbloqueie novas insígnias ao alcançar os níveis de Guardião.
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-5 gap-6 text-center">
+              {levelBadges.map((badge) => {
+                const isUnlocked = character?.level >= badge.level;
+                const opacity = isUnlocked ? 'opacity-100' : 'opacity-30 grayscale';
+                const shadow = isUnlocked ? 'shadow-green-500/50' : 'shadow-gray-500/50';
+
+                return (
+                  <div
+                    key={badge.level}
+                    className={`flex flex-col items-center p-3 rounded-xl transition-all duration-500 bg-white border border-gray-200 hover:scale-105 ${opacity} shadow-lg ${shadow}`}
+                  >
+                    <div className="text-5xl mb-2">{badge.icon}</div>
+                    <div className="text-sm font-bold leading-tight text-gray-800">{badge.name}</div>
+                    <div className="text-xs text-gray-500 mt-1">
+                      {isUnlocked ? "Conquistada" : `Nível ${badge.level}`}
+                    </div>
+                    <div className="absolute top-1 right-1">
+                      {!isUnlocked && <span className="text-xl">🔒</span>}
+                    </div>
+                  </div>
+                );
+              })}
             </div>
-          </Card>
-          <Card className="p-4">
-            <div>
-              <div className="text-sm text-gray-500">Ações registradas</div>
-              <div className="text-2xl font-bold">{userActions.length}</div>
-            </div>
-          </Card>
-          <Card className="p-4">
-            <div>
-              <div className="text-sm text-gray-500">Progresso</div>
-              <div className="mt-2">
-                <Progress value={(character?.xp / character?.maxXp) * 100 || 0} className="w-full h-2.5" />
-              </div>
-            </div>
-          </Card>
+          </CardContent>
+        </Card>
+
+        {/* Mensagem de incentivo */}
+        <div className="mt-8 p-4 bg-green-50 border-l-4 border-green-500 text-green-800 rounded-lg">
+          <p className="font-semibold">Seu Nível Atual: {character?.level || 1}</p>
+          <p className="text-sm">Continue suas ações sustentáveis para desbloquear a próxima insígnia e se tornar um Campeão do Eco!</p>
         </div>
       </div>
     );
@@ -1166,6 +1277,7 @@ function App() {
     if (!character) return null;
     const totalMaxXp = character.maxXp || 100;
     const xpPercent = (character.xp / totalMaxXp) * 100;
+    const currentBadge = getCurrentBadge(character.level); // Nova lógica
     return (
       <div className="flex flex-col min-h-screen bg-gradient-to-br from-green-400 to-blue-500 p-4">
         {/* Barra superior profissional */}
@@ -1181,12 +1293,18 @@ function App() {
               <div className="flex flex-wrap items-center gap-2 min-w-0">
                 <h1 className="text-2xl font-bold truncate">{character.name}</h1>
 
+                {/* Insígnia Atual */}
+                <div className="flex items-center gap-1 px-2 py-0.5 rounded-full bg-green-100 border border-green-300 text-xs font-semibold text-green-800" title={currentBadge.description}>
+                  <span className="text-lg">{currentBadge.icon}</span>
+                  <span className="whitespace-nowrap">{currentBadge.name}</span>
+                </div>
+
                 <Badge variant="secondary" className="text-xs uppercase tracking-wide">
                   Nível {character.level}
                 </Badge>
 
                 {/* Streak integrado com nome/nível */}
-                <div className="flex items-center gap-1 px-2 py-0.5 rounded-full bg-orange-50 border border-orange-100 text-[11px] font-semibold text-orange-700">
+                <div className={`flex items-center gap-1 px-2 py-0.5 rounded-full ${streakData.streak > 0 ? 'bg-orange-50 border border-orange-100 text-[11px] font-semibold text-orange-700' : 'bg-gray-100 border border-gray-300 text-[11px] font-semibold text-gray-500 opacity-50'}`}>
                   <span className="text-sm">🔥</span>
                   <span className="whitespace-nowrap">
                     {streakData.streak || 0} {(streakData.streak || 0) === 1 ? "dia" : "dias"}
@@ -1222,7 +1340,7 @@ function App() {
             <TabsTrigger value="actions" className="tabs-trigger"><Plus className="h-4 w-4 mr-2" /> Ações</TabsTrigger>
             <TabsTrigger value="combat" className="tabs-trigger"><Sword className="h-4 w-4 mr-2" /> Combate</TabsTrigger>
             <TabsTrigger value="achievements" className="tabs-trigger"><Leaf className="h-4 w-4 mr-2" /> Conquistas</TabsTrigger>
-            <TabsTrigger value="ranking" className="tabs-trigger"><BadgeIcon className="h-4 w-4 mr-2" /> Ranking</TabsTrigger>
+            <TabsTrigger value="ranking" className="tabs-trigger"><Trophy className="h-4 w-4 mr-2" /> Ranking</TabsTrigger>
             <TabsTrigger value="events" className="tabs-trigger"><Leaf className="h-4 w-4 mr-2" /> Eventos</TabsTrigger>
           </TabsList>
 

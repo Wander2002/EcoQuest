@@ -49,18 +49,18 @@
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.49 0.24 142.09); /* Verde vibrante */
+  --primary: oklch(0.49 0.24 142.09);
   --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.59 0.21 203.08); /* Azul turquesa */
+  --secondary: oklch(0.59 0.21 203.08);
   --secondary-foreground: oklch(0.985 0 0);
   --muted: oklch(0.97 0 0);
   --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.76 0.19 88.39); /* Amarelo esverdeado */
+  --accent: oklch(0.76 0.19 88.39);
   --accent-foreground: oklch(0.145 0 0);
   --destructive: oklch(0.577 0.245 27.325);
   --border: oklch(0.922 0 0);
   --input: oklch(0.922 0 0);
-  --ring: oklch(0.49 0.24 142.09); /* Verde vibrante */
+  --ring: oklch(0.49 0.24 142.09);
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
@@ -68,7 +68,7 @@
   --chart-5: oklch(0.769 0.188 70.08);
   --sidebar: oklch(0.985 0 0);
   --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.49 0.24 142.09); /* Verde vibrante */
+  --sidebar-primary: oklch(0.49 0.24 142.09);
   --sidebar-primary-foreground: oklch(0.985 0 0);
   --sidebar-accent: oklch(0.97 0 0);
   --sidebar-accent-foreground: oklch(0.205 0 0);
@@ -83,18 +83,18 @@
   --card-foreground: oklch(0.985 0 0);
   --popover: oklch(0.205 0 0);
   --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.59 0.28 142.09); /* Verde vibrante mais claro */
+  --primary: oklch(0.59 0.28 142.09);
   --primary-foreground: oklch(0.145 0 0);
-  --secondary: oklch(0.69 0.21 203.08); /* Azul turquesa mais claro */
+  --secondary: oklch(0.69 0.21 203.08);
   --secondary-foreground: oklch(0.145 0 0);
   --muted: oklch(0.269 0 0);
   --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.86 0.19 88.39); /* Amarelo esverdeado mais claro */
+  --accent: oklch(0.86 0.19 88.39);
   --accent-foreground: oklch(0.145 0 0);
   --destructive: oklch(0.704 0.191 22.216);
   --border: oklch(1 0 0 / 10%);
   --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.59 0.28 142.09); /* Verde vibrante mais claro */
+  --ring: oklch(0.59 0.28 142.09);
   --chart-1: oklch(0.488 0.243 264.376);
   --chart-2: oklch(0.696 0.17 162.48);
   --chart-3: oklch(0.769 0.188 70.08);
@@ -102,7 +102,7 @@
   --chart-5: oklch(0.645 0.246 16.439);
   --sidebar: oklch(0.205 0 0);
   --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.59 0.28 142.09); /* Verde vibrante mais claro */
+  --sidebar-primary: oklch(0.59 0.28 142.09);
   --sidebar-primary-foreground: oklch(0.985 0 0);
   --sidebar-accent: oklch(0.269 0 0);
   --sidebar-accent-foreground: oklch(0.985 0 0);
@@ -120,7 +120,6 @@
   }
 }
 
-/* Estilos personalizados para o EcoQuest */
 .bg-gradient-to-br {
   background-image: linear-gradient(to bottom right, #34d399, #3b82f6);
   background-size: 200% 200%;
@@ -199,7 +198,6 @@
   transition: width 0.3s ease;
 }
 
-/* Animações para elementos do jogo */
 .avatar-emoji {
   font-size: 3rem;
   animation: float 3s ease-in-out infinite;
@@ -234,7 +232,6 @@
   }
 }
 
-/* Notificações e alertas */
 .notification {
   position: fixed;
   top: 20px;
@@ -268,7 +265,6 @@
   }
 }
 
-/* Estilos para tela de batalha */
 .battle-container {
   background-color: rgba(0, 0, 0, 0.7);
   backdrop-filter: blur(5px);
@@ -300,13 +296,11 @@
   }
 }
 
-/* Estilos para o mapa */
 .map-container {
   background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="rgba(255,255,255,0.1)"/><path d="M0,0L100,100M100,0L0,100" stroke="rgba(255,255,255,0.2)" stroke-width="1"/></svg>');
   background-size: 20px 20px;
 }
 
-/* Estilos para a loja */
 .shop-item {
   transition: all 0.3s ease;
 }
@@ -333,7 +327,6 @@
   }
 }
 
-/* Estilos para o inventário */
 .inventory-item {
   position: relative;
 }
