@@ -8,48 +8,45 @@ O EcoQuest é um **Sistema de Gamificação** projetado para aplicar elementos e
 Incentivar ações sustentáveis na vida real por meio de um sistema de gamificação, onde os usuários evoluem seus personagens e combatem vilões ambientais através de ações ecológicas.
 
 ## 🎮 Funcionalidades Principais
-
 ✅ Tela de login e cadastro de usuário.
-✅ Criação de personagem estilo Guardião do Planeta.
-✅ Sistema de ações ecológicas.
-✅ Sistema de Sequência de dias
-✅ Combate contra vilões ambientais.
-✅ Sistema de eventos.
-✅ Sistema de Ranking Global.
+<br>✅ Criação de personagem estilo Guardião do Planeta.
+<br>✅ Sistema de ações ecológicas.
+<br>✅ Sistema de Sequência de dias
+<br>✅ Combate contra vilões ambientais.
+<br>✅ Sistema de eventos.
+<br>✅ Sistema de Ranking Global.
 
 ## 📜 Requisitos
 
 ### ✅ Requisitos Funcionais (RF)
-
 RF001 — Cadastro e autenticação de usuários (Login e Cadastro).
-RF002 — Criação e personalização do personagem.
-RF003 — Listagem e execução de quests sustentáveis.
-RF004 — Sistema de evolução de níveis.
-RF005 — Sistema de combate contra vilões ambientais.
-RF006 — Visualização de mapa colaborativo de pontos sustentáveis.
-RF007 — Ranking e conquistas.
+<br>RF002 — Criação e personalização do personagem.
+<br>RF003 — Listagem e execução de quests sustentáveis.
+<br>RF004 — Sistema de evolução de níveis.
+<br>RF005 — Sistema de combate contra vilões ambientais.
+<br>RF006 — Visualização de mapa colaborativo de pontos sustentáveis.
+<br>RF007 — Ranking e conquistas.
 
 ### ⚙️ Requisitos Não Funcionais (RNF)
-
 RNF001 — Interface responsiva (web).
-RNF002 — Banco de dados escalável.
-RNF003 — Tempo de resposta inferior a 3 segundos.
-RNF004 — Segurança dos dados dos usuários.
-RNF005 — Design intuitivo e acessível.
-RNF006 — Suporte multiplataforma (Web).
+<br>RNF002 — Banco de dados escalável.
+<br>RNF003 — Tempo de resposta inferior a 3 segundos.
+<br>RNF004 — Segurança dos dados dos usuários.
+<br>RNF005 — Design intuitivo e acessível.
+<br>RNF006 — Suporte multiplataforma (Web).
 
 ## 🛠️ Tecnologias
 
-Linguagem: JavaScript
-Framework/Biblioteca: React
-Backend & Banco de Dados: Firebase
-Estilização: CSS
+<br>🟨 Linguagem: **JavaScript**  
+<br>⚛️ Framework/Biblioteca: **React**  
+<br>🔥 Backend & Banco de Dados: **Firebase**  
+<br>🎨 Estilização: **CSS**
 
 ## 🧠 Metodologia
 
-🎯 Metodologia: Kanban
-📋 Ferramenta: Trello (Exemplo)
-🔁 Entregas incrementais com sprints semanais
+<br>🎯 Metodologia: **Kanban**
+<br>📋 Ferramenta: **Trello**
+<br>🔁 Entregas incrementais com sprints semanais
 
 ## 🗺️ Estrutura do Projeto
 
@@ -81,15 +78,13 @@ ecoquest/
 
 ## 💡 Trabalhos Futuros
 
-🎯 Implementar desafios colaborativos entre usuários
-📱 Integração com redes sociais para divulgação de impacto
-📊 Dashboards de progresso e impacto ambiental do jogador
+<br>🎯 Implementar desafios colaborativos entre usuários
+<br>📱 Integração com redes sociais para divulgação de impacto
+<br>📊 Dashboards de progresso e impacto ambiental do jogador
 
 ## 🧑‍💻 Desenvolvido por
 
-Wander Jean Hanemann
-Email: wander.hanemann@catolicasc.edu.br
-Instituição: Católica de Santa Catarina
-Curso: Engenharia de Software
-
-🌍 Gamifique sua sustentabilidade. Salve o planeta com ações gamificadas. ♻️
+**Wander Jean Hanemann**
+<br>Email: **wander.hanemann@catolicasc.edu.br**
+<br>Instituição: **Católica de Santa Catarina**
+<br>Curso: **Engenharia de Software**
