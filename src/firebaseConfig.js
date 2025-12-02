@@ -1,10 +1,10 @@
 const firebaseConfig = {
-  apiKey: "AIzaSyAc6HggIQeN4hlI8h6iROU9XWxaHtdfUSk",
-  authDomain: "ecoquest-f4273.firebaseapp.com",
-  projectId: "ecoquest-f4273",
-  storageBucket: "ecoquest-f4273.firebasestorage.app",
-  messagingSenderId: "1055325964856",
-  appId: "1:1055325964856:web:cdba23b927feac1e11b4cd",
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID,
 };
 
 export default firebaseConfig;
