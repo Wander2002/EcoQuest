@@ -102,7 +102,7 @@ O sistema de eventos atual é bem simples e cobre só o básico. Na próxima ver
 
 - **Eventos Recorrentes e Temáticos:** Implementação de eventos sazonais (ex: "Mês da Reciclagem", "Semana da Água") com duração limitada, que oferecem missões exclusivas, recompensas raras e um conhecimento específico.
 - **Mecânicas de Evento Únicas:** Introdução de mecânicas de jogo específicas para eventos, como *mini-games* ou desafios de tempo real, que exigem a colaboração ou competição entre os usuários.
-- **🏅 Integração com Gamificação:** As ONGs poderão configurar quais recompensas, pontos ou conquistas serão atribuídos ao usuário ao participar ou finalizar um evento, tornando cada experiência mais motivadora.
+- **Integração com Gamificação:** As ONGs poderão configurar quais recompensas, pontos ou conquistas serão atribuídos ao usuário ao participar ou finalizar um evento, tornando cada experiência mais motivadora.
 
 ### 2. Engajamento Social e Colaborativo
 
