@@ -43,8 +43,7 @@ RNF001 — Interface responsiva (web).
 <br>🎨 Estilização: **CSS**
 
 ## 🧠 Metodologia
-
-<br>🎯 Metodologia: **Kanban**
+🎯 Metodologia: **Kanban**
 <br>📋 Ferramenta: **Trello**
 <br>🔁 Entregas incrementais com sprints semanais
 
@@ -76,9 +75,14 @@ ecoquest/
 └── pnpm-lock.yaml      # Dependências pnpm
 ```
 
-## 💡 Trabalhos Futuros
+## 🎬 Vídeo de apresentação
 
-<br>🎯 Implementar desafios colaborativos entre usuários
+Você pode assistir ao vídeo demonstrativo do EcoQuest clicando no 
+[link](https://youtu.be/CyBuZCS-UFY)
+
+
+## 💡 Trabalhos Futuros
+🎯 Implementar desafios colaborativos entre usuários
 <br>📱 Integração com redes sociais para divulgação de impacto
 <br>📊 Dashboards de progresso e impacto ambiental do jogador
 
