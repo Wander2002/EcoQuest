@@ -1,7 +1,6 @@
 # EcoQuest — Sistema de Gamificação da Sustentabilidade
 
 ## 🎯 Introdução
-
 O EcoQuest é um **Sistema de Gamificação** projetado para aplicar elementos e mecânicas de jogos (como progressão, recompensas e desafios) em um contexto não-jogo, visando motivar e engajar usuários em **ações sustentáveis no mundo real**. O sistema transforma a jornada ecológica do usuário em uma experiência de evolução de personagem, onde cada ação positiva contribui para o progresso virtual e o combate a problemas ambientais.
 
 ## 🚀 Objetivo
@@ -36,7 +35,6 @@ RNF001 — Interface responsiva (web).
 <br>RNF006 — Suporte multiplataforma (Web).
 
 ## 🛠️ Tecnologias
-
 <br>🟨 Linguagem: **JavaScript**  
 <br>⚛️ Framework/Biblioteca: **React**  
 <br>🔥 Backend & Banco de Dados: **Firebase**  
@@ -75,6 +73,19 @@ ecoquest/
 └── pnpm-lock.yaml      # Dependências pnpm
 ```
 
+## 🔗 Acesso ao Projeto
+
+Acesse a versão online do projeto pelo link abaixo:
+
+**[Acessar Aplicação](https://eco-quest-eight.vercel.app)**
+
+### Credenciais para Teste
+
+Use o usuário e senha abaixo para testar a aplicação:
+
+- **Usuário:** `wanderhanemann@gmail.com`
+- **Senha:** `123456`
+
 ## 🎬 Vídeo de apresentação
 
 Você pode assistir ao vídeo demonstrativo do EcoQuest clicando no 
@@ -82,9 +93,30 @@ Você pode assistir ao vídeo demonstrativo do EcoQuest clicando no
 
 
 ## 💡 Trabalhos Futuros
-🎯 Implementar desafios colaborativos entre usuários
-<br>📱 Integração com redes sociais para divulgação de impacto
-<br>📊 Dashboards de progresso e impacto ambiental do jogador
+
+O EcoQuest, em sua versão MVP, estabeleceu a base para um sistema de gamificação robusto. Para a próxima fase de desenvolvimento, o foco será na expansão da profundidade da jogabilidade, no engajamento social e na análise de impacto.
+
+### 1. Expansão do Sistema de Eventos
+
+O sistema de eventos atual é bem simples e cobre só o básico. Na próxima versão, a ideia é evoluir isso para algo mais dinâmico e envolvente, trazendo mais flexibilidade e variedade nas interações.
+
+- **Eventos Recorrentes e Temáticos:** Implementação de eventos sazonais (ex: "Mês da Reciclagem", "Semana da Água") com duração limitada, que oferecem missões exclusivas, recompensas raras e um conhecimento específico.
+- **Mecânicas de Evento Únicas:** Introdução de mecânicas de jogo específicas para eventos, como *mini-games* ou desafios de tempo real, que exigem a colaboração ou competição entre os usuários.
+- **🏅 Integração com Gamificação:** As ONGs poderão configurar quais recompensas, pontos ou conquistas serão atribuídos ao usuário ao participar ou finalizar um evento, tornando cada experiência mais motivadora.
+
+### 2. Engajamento Social e Colaborativo
+
+Aumentar a interação entre os usuários para fortalecer a comunidade e o impacto coletivo:
+
+- **Desafios Colaborativos e Guildas:** Implementar um sistema de "Guildas" ou "Equipes" onde os usuários podem se unir para completar metas ambientais maiores, desbloqueando bônus e recompensas de grupo. Isso incentivará a responsabilidade mútua e o senso de pertencimento.
+- **Integração Avançada com Redes Sociais:** Permitir que os usuários compartilhem automaticamente suas conquistas, o impacto ambiental acumulado (ex: CO2 evitado) e o progresso em missões específicas em plataformas como Instagram e X (Twitter), com gráficos gerados automaticamente para maior visibilidade.
+
+### 3. Análise de Dados e Dashboards de Impacto
+
+Aprimorar a visualização de dados para reforçar o *feedback loop* positivo e a transparência do impacto:
+
+- **Dashboards de Progresso Detalhados:** Criação de painéis de controle personalizados para o jogador, exibindo métricas detalhadas de seu progresso (nível, experiência, itens) e, mais importante, o impacto ambiental quantificado (ex: litros de água economizados, redução de emissão de carbono).
+- **Ranking Global Aprimorado:** Implementação de filtros e categorias no ranking (ex: por região, por tipo de ação, por guilda) para aumentar a competitividade saudável e o reconhecimento.
 
 ## 🧑‍💻 Desenvolvido por
 
